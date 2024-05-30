@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Project Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Microbe&family=Teko&display=swap" rel="stylesheet">
+    <style>
+        * {
+            width: 100%;
+        }
+        body{
+            background: url(https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat;
+            background-size: 100% 100vh;
+        }
+        #cars {
+            padding: 0px 50px;
+        }
+
+        .form_design {
+            margin: 50px auto;
+            padding:10px 20px;
+            width: 70%;
+            height: 80vh;
+            background: url(https://images.pexels.com/photos/919073/pexels-photo-919073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat;
+            background-size: 100% 100%;
+            border: 1px solid black;
+            box-shadow: 2px 10px 10px 10px rgb(101, 100, 100);
+            text-align: center;
+        }
+        .form_design input, .form_design select{
+            margin-top: 30px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid white;
+            height: 50px;
+        }
+        ::placeholder{
+            color: white;
+            text-align: center;
+        }
+        #submit{
+            width: 20%;
+        }
+        span{
+            font-family: 'Rubik Microbe', cursive;
+            font-family: 'Teko', sans-serif, monospace;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="form_design">
+            <div class="form">
+                <form action="/predict" method="POST">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <!-- COMPANY  -->
+                            <span class="text-white ms-4">Select Your Car Brand   </span>
+                            <select name="brands" id="brands" onchange="selectone(this.id,'cars')" class="bg-black text-white w-50 text-center ms-4">
+                                <option value="" disabled>Select Car</option>
+                                <option value="Audi" selected>AUDI</option>
+                                <option value="BMW" >BMW</option>
+                                <option value="Bently" >BENTLY</option>
+                                <option value="Chevrolet" >CHEVROLET</option>
+                                <option value="Datsun" >DATSUN</option>
+                                <option value="Ferrari" >FERRARI</option>
+                                <option value="Fiat" >FIAT</option>
+                                <option value="Ford" >FORD</option>
+                                <option value="Honda" >HONDA</option>
+                                <option value="Hyundai" >HYUNDAI</option>
+                                <option value="Isuzu" >ISUZU</option>
+                                <option value="Jagaur" >JAGUAR</option>
+                                <option value="Jeep" >JEEP</option>
+                                <option value="Kia" >KIA</option>
+                                <option value="Land Rover" >LAND ROVER</option>
+                                <option value="Lexus" >LEXUS</option>
+                                <option value="MG" >MG</option>
+                                <option value="Mini" >MINI</option>
+                                <option value="Mahindra" >MAHINDRA</option>
+                                <option value="Mahindra-Renault" >MAHINDRA-RENAULT</option>
+                                <option value="Maruti Suzuki" >MARUTI SUZUKI</option>
+                                <option value="Maserati" >MASERATI</option>
+                                <option value="Mercedes-Benz" >MERCEDES-BENZ</option>
+                                <option value="Mitsubhishi" >MITSUBISHI</option>
+                                <option value="Nissan" >NISSAN</option>
+                                <option value="Porche" >PORSCHE</option>
+                                <option value="Renault" >RENAULT</option>
+                                <option value="Skoda" >SKODA</option>
+                                <option value="Ssangyong" >SSANGYONG</option>
+                                <option value="Tata" >TATA</option>
+                                <option value="Toyota" >TOYOTA</option>
+                                <option value="Volkswagen" >VOLKSWAGEN</option>
+                                <option value="Volvo" >VOLVO</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <!-- OWNERS -->
+                            <span class="text-white">Select The Owner Of The Car</span>
+                            <select name="owners" id="owners" class="p-1 w-50 bg-black text-white text-center ms-2">
+                                <option value="" disabled>Owners</option>
+                                <option value="First" selected>First</option>
+                                <option value="Second">Second</option>
+                                <option value="Third">Third</option>
+                                <option value="Fourth">Fourth</option>
+                                <option value="Unregistered-Car">Unregistered-Car</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <DIV class="row mt-3">
+                        <div class="col">
+                            <!-- <span class="text-white">COLORS</span> -->
+                            <span class="text-white">Select The Color Of The Car</span>
+                            <select name="colors" id="colors"  class="p-1 w-50 bg-black text-white text-center ms-2">
+                                <option value="" disabled>Colours</option>
+                                <option value="Beige" selected>Beige</option>
+                                <option value="Black">Black</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Bronze">Bronze</option>
+                                <option value="Brown">Brown</option>
+                                <option value="Gold">Gold</option>
+                                <option value="Green">Green</option>
+                                <option value="Grey">Grey</option>
+                                <option value="Maroon">Maroon</option>
+                                <option value="Orange">Orange</option>
+                                <option value="Purple">Purple</option>
+                                <option value="Red">Red</option>
+                                <option value="Silver">Silver</option>
+                                <option value="White">White</option>
+                                <option value="Yellow">Yellow</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <span class="text-white">Enter The Mileage In KMPL</span>
+                            <input type="number" name="mileage" id="mileage" min="1" placeholder="Mileage" class="w-50 bg-black text-white text-center ms-3" value="1">
+                        </div>
+                    </DIV>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <span class="text-white">Enter Running In Kilometers</span>
+                            <input type="number" name="Running" id="Running" min="1" placeholder="Running in kilometers" class="w-50 bg-black ms-2 text-white text-center" value="1">
+                        </div>
+                        <div class="col">
+                            <span class="text-white ms-4">Select Your Fuel Type</span>
+                            <select name="fuel" id="fuel" class="p-1 w-50 bg-black text-white text-center ms-4">
+                                <option value="" disabled>Fuel Type</option>
+                                <option value="CNG">CNG</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Hybrid">Hybrid</option>
+                                <option value="LPG">LPG</option>
+                                <option value="Petrol">Petrol</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <span class="text-white">Enter The Year Of Purchase</span>  
+                            <input type="number" name="Year" id="Year" placeholder="Year" min="1900" max="2022" value="2000" class="w-50 bg-black text-white text-center">
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="submit" id="submit" value="Predict" class="bg-black text-white text-center">
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script>
+        function selectone(s1, s2) {
+            var s1 = document.getElementById(s1);
+            var s2 = document.getElementById(s2);
+            s2.innerHTML = "";
+            if (s1.value == 'BMW') {
+                var optionarray = ['BMWX1|BMWX1', 'BMWX4|BMWX4'];
+            }
+            if (s1.value == 'AUDI') {
+                var optionarray = ['BMWX1|BMWX1', 'BMWX4|BMWX4'];
+            }
+            for (var option in optionarray) {
+                var pair = optionarray[option].split("|");
+                var newoption = document.createElement("option");
+                newoption.value = pair[0];
+                newoption.innerHTML = pair[1];
+                s2.add(newoption);
+            }
+        }
+    </script>
+</body>
+
+</html>
